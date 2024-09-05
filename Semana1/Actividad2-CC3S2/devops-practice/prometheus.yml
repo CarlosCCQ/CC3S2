@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s # Intervalo de tiempo en el qe Prometheus hará monitoreo (scraping) de los datos
+
+scrape_configs:
+  - job_name: 'node-app' # Nombre del trabajo de scraping
+    static_configs:
+      - targets: ['app:3000'] # Dirección y puerto del objetivo a monitorizar

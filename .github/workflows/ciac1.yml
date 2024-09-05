@@ -1,0 +1,37 @@
+name: CI/CD Pipeline # Nombre del workflow
+on: # Define donde se ejecutará el workflow
+  push: # Se ejecutará el workflow cuando se haga un push a la rama 'main'
+    branches:
+      - main
+  pull_request: # Se ejecutará el workflow cuando se cree o actualice un pull request hacia la rama 'main'
+    branches:
+      - main
+
+jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
+  build: # Nombre del job
+    runs-on: ubuntu-latest # El job se ejecutará en una máquina virtual con la última versión disponible de Ubuntu
+    
+    steps: # Define las acciones o comandos específicos que se ejecutarán dentro del job 'Build'
+      - name: Checkout code # Nombre del paso
+        uses: actions/checkout@v2 # Utiliza la acción actions/checkout@v2 para clonar el repositorio en la máquina virtual
+        
+      - name: Set up Node.js # Nombre del paso
+        uses: actions/setup-node@v2 # Utiliza la acción actions/setup-node@v2 para instalar Node.js
+        with: # Se utiliza para definir parámetros de acción
+          node-version: '20' # Se instalará la versión 20 de Node.js
+        
+      - name: Install dependencies # Nombre del paso
+        run: npm install # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto definidas en 'package.json'
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
+
+      - name: Run tests # Nombre del paso
+        run: npx jest --verbose # utilizamos jest gracias a la dependencia nps 
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
+
+      - name: Build Docker image # Nombre del paso
+        run: docker build -t devops-practice .
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice # Construye la imagen de Docker utilizando el comando docker build
+        
+      - name: Run Docker container # Nombre del paso
+        run: docker run -d -p 3000:3000 devops-practice # Ejecuta el contenedor Docker en segundo plano mapeando el puerto 3000 del contenedor al puerto 3000 de la máquina virtual
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
