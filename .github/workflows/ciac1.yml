@@ -34,8 +34,6 @@ jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
           docker compose up --build -d # Cambiar docker-compose a docker compose
         working-directory: Semana1/Actividad1-CC3S2/devops-practice
 
-      - name:
-
       # - name: Build Docker image # Nombre del paso
       #   run: docker build -t devops-practice .
       #   working-directory: Semana1/Actividad1-CC3S2/devops-practice # Construye la imagen de Docker utilizando el comando docker build
