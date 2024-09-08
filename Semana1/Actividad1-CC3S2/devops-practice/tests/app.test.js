@@ -26,7 +26,7 @@ describe('GET /', () => {
     let server;
 
     beforeAll(() => {
-        sever = app.listen(0); // Usar 0 permite al sistema asignar un puerto libre automatico
+        server = app.listen(0); // Usar 0 permite al sistema asignar un puerto libre automatico
     });
 
     afterAll(() => {
