@@ -25,7 +25,15 @@ jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
       - name: Install dependencies # Nombre del paso
         run: npm install # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto definidas en 'package.json'
         working-directory: Semana1/Actividad1-CC3S2/devops-practice
+        
+      - name: Run npm audit 
+        run: npm audit 
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
 
+      - name: Run npm audit fix 
+        run: npm audit fix 
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
+        
       - name: Check Docker and Docker Compose versions
         run: |
           docker --version
