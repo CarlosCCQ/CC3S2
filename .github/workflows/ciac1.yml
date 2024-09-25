@@ -14,6 +14,8 @@ jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
     steps: # Define las acciones o comandos específicos que se ejecutarán dentro del job 'Build'
       - name: Checkout code # Nombre del paso
         uses: actions/checkout@v2 # Utiliza la acción actions/checkout@v2 para clonar el repositorio en la máquina virtual
+        with:
+          submodules: false
         
       - name: Set up Node.js # Nombre del paso
         uses: actions/setup-node@v2 # Utiliza la acción actions/setup-node@v2 para instalar Node.js
