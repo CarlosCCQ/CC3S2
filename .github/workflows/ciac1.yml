@@ -46,7 +46,7 @@ jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
 
       - name: Run tests # Nombre del paso
         run: docker exec devops-practice-container npm test # utilizamos jest gracias a la dependencia nps 
-        # working-directory: Semana1/Actividad1-CC3S2/devops-practice
+        working-directory: Semana1/Actividad1-CC3S2/devops-practice
 
       - name: Stop and clean Docker Compose
         run: |
