@@ -4,3 +4,6 @@
 [submodule "Semana2/Actividad5-CC3S2"]
 	path = Semana2/Actividad5-CC3S2
 	url = https://github.com/CarlosCCQ/Actividad5-CC3S2.git
+[submodule "Semana3/Actividad7-CC3S2"]
+	path = Semana3/Actividad7-CC3S2
+	url = https://github.com/CarlosCCQ/Actividad7-CC3S2.git
