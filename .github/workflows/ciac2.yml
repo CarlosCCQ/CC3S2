@@ -24,6 +24,10 @@ jobs: # Conjunto de pasos que se ejecutarán como parte del workflow
         run: npm install # Ejecuta el comando 'npm install' para instalar las dependencias del proyecto definidas en 'package.json'
         working-directory: Semana1/Actividad2-CC3S2/devops-practice
 
+      - name: Fix security
+        run: npm audit fix
+        working-directory: Semana1/Actividad2-CC3S2/devops-practice
+
       - name: Run tests # Nombre del paso
         run: npx jest --verbose # utilizamos jest gracias a la dependencia nps
         working-directory: Semana1/Actividad2-CC3S2/devops-practice
