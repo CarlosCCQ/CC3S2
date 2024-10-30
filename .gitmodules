@@ -13,3 +13,6 @@
 [submodule "Tarea-1-Juego-Trivia/Juego-Trivia"]
 	path = Tarea-1-Juego-Trivia/Juego-Trivia
 	url = https://github.com/CarlosCCQ/Juego-Trivia.git
+[submodule "Semana3/Actividad9-CC3S2"]
+	path = Semana3/Actividad9-CC3S2
+	url = https://github.com/CarlosCCQ/Word-Guessing-Game.git
